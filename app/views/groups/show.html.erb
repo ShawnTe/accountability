@@ -4,5 +4,9 @@
   <% @group.members.each do |member| %>
     <li><%= member.name %></li>
   <% end %>
+  <form>
+    <%= select_tag(:member_id, options_for_select(@member_options)) %>
+  </form>
+
 
 </div>
