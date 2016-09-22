@@ -12,8 +12,20 @@ Member.create(
   group_id: 1
 )
 
+Member.create(
+  name: "Sarah",
+  email: "Sarah@sarah.com",
+  group_id: 1
+)
+
 Goal.create(
-  description: "Drink more water",
+  description: "Finish linkedin profile",
+  completed: false,
+  member_id: 2
+)
+
+Goal.create(
+  description: "Add the goods to linkedin",
   completed: false,
   member_id: 1
 )
