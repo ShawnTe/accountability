@@ -1,12 +1,34 @@
 <div class=main-container>
+  <div class=header>
+    <h1><%= @group.name %></h1>
+  </div>
 
-  <h1><%= @group.name %></h1>
-  <% @group.members.each do |member| %>
-    <li><%= member.name %></li>
-  <% end %>
-  <form>
-    <%= select_tag(:member_id, options_for_select(@member_options)) %>
-  </form>
+  <div class=body-container>
+    <div class=body-left>
+      <div class=box>
+        <form>
+          <option value="$">Dollar</option>
+          <option value="DKK">Kroner</option>
+        </form>
+      </div>
 
+      <div class=box>
+        Some things
+      </div>
+      <div class=square>
+      </div>
 
+    </div>
+    <div class=body-right>
+      <div class=box>
+        Some more things
+      </div>
+    </div>
+  </div>
+
+  <div class=footer>
+    <div class=footer-text>
+      interesting things here.
+    </div>
+  </div>
 </div>
