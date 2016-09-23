@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
 
   def show
       @group = Group.find(params[:id])
-      @member_options = @group.members.map{ |member| [ member.name, member.id ] }
+      @member_options = @group.members.map{ |m| [ m.name, m.id ] }
       # @members = @group.members
   end
 

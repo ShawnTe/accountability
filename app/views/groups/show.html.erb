@@ -6,10 +6,10 @@
   <div class=body-container>
     <div class=body-left>
       <div class=box>
-        <form>
-          <option value="$">Dollar</option>
-          <option value="DKK">Kroner</option>
-        </form>
+          <form action="/members" >
+            <%= select_tag(:mem_id, options_for_select(@member_options)) %>
+            <input type="submit">
+          </form>
       </div>
 
       <div class=box>
