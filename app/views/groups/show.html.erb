@@ -6,10 +6,11 @@
   <div class=body-container>
     <div class=body-left>
       <div class=box>
-          <form action="/members" >
+          <form action="/members/shows" >
             <%= select_tag(:mem_id, options_for_select(@member_options)) %>
             <input type="submit">
           </form>
+          <%= link_to "Add member", new_group_member_path(@group) %>
       </div>
 
       <div class=box>
