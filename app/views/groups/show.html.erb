@@ -10,7 +10,23 @@
             <%= select_tag(:mem_id, options_for_select(@member_options)) %>
             <input type="submit">
           </form>
-          <%= link_to "Add member", new_group_member_path(@group) %>
+        </div>
+        <div class=box>
+        <%= form_for [@group, @member] do |f| %>
+          <p>
+            <%= f.label :name %><br>
+            <%= f.text_field :name %>
+          </p>
+
+          <p>
+            <%= f.label :email %><br>
+            <%= f.text_field :email %>
+          </p>
+
+          <p>
+            <%= f.submit %>
+          </p>
+        <% end %>
       </div>
 
       <div class=box>
