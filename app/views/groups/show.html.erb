@@ -5,38 +5,33 @@
 
   <div class=body-container>
     <div class=body-left>
-      <div class=box>
-          <form action="/members/shows" >
-            <%= select_tag(:mem_id, options_for_select(@member_options)) %>
-            <input type="submit">
-          </form>
-        </div>
         <div class=box>
-        <%= form_for [@group, @member] do |f| %>
-          <p>
-            <%= f.label :name %><br>
-            <%= f.text_field :name %>
-          </p>
+          <%= form_for @group do |f| %>
+            <%= f.fields_for :members do |builder| %>
+              <%= render "member_fields", :f => builder %>
+            <% end %>
 
-          <p>
-            <%= f.label :email %><br>
-            <%= f.text_field :email %>
-          </p>
 
-          <p>
-            <%= f.submit %>
-          </p>
-        <% end %>
+            <p>
+              <%= f.submit %>
+            </p>
+          <% end %>
       </div>
 
+
+    </div>
+    <div class=body-right>
+      <div class=box>
+        <form action="/members/shows" >
+          <%= select_tag(:mem_id, options_for_select(@member_options)) %>
+          <input type="submit">
+        </form>
+      </div>
       <div class=box>
         Some things
       </div>
       <div class=square>
       </div>
-
-    </div>
-    <div class=body-right>
       <div class=box>
         Some more things
       </div>

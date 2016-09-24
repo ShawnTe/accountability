@@ -1,0 +1,7 @@
+<p>
+  <%= f.label :name, "Member" %> <br />
+    <%= f.text_field :name %> <br />
+</p>
+<%= f.fields_for :goals do |builder| %>
+  <%= render 'goals_fields', :f => builder %>
+<% end %>
