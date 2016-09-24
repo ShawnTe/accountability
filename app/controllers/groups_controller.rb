@@ -13,7 +13,12 @@ class GroupsController < ApplicationController
       # @members = @group.members
   end
 
+  def edit
+    p "ajax will ping this to serve up a partial w/ member + goals"
+    render 'member_fields'
+  end
+
   def update
-end
+  end
 
 end

@@ -4,38 +4,31 @@
   </div>
 
   <div class=body-container>
+
     <div class=body-left>
-        <div class=box>
-          <%= form_for @group do |f| %>
-            <%= f.fields_for :members do |builder| %>
-              <%= render "member_fields", :f => builder %>
-            <% end %>
-
-
-            <p>
-              <%= f.submit %>
-            </p>
-          <% end %>
-      </div>
-
-
-    </div>
-    <div class=body-right>
       <div class=box>
         <form action="/members/shows" >
           <%= select_tag(:mem_id, options_for_select(@member_options)) %>
           <input type="submit">
         </form>
-      </div>
-      <div class=box>
-        Some things
-      </div>
-      <div class=square>
-      </div>
-      <div class=box>
-        Some more things
+        on submit send ajax call to '/edit' to serve up my member record + goals to display on right in id=member-details
       </div>
     </div>
+
+    <div class=body-right>
+      <div class=box id=member-details>
+        change this to accept a partial (from ajax call) that shows a certain member + goals
+        <%= form_for @group do |f| %>
+        <%= f.fields_for :members do |builder| %>
+        <%= render "member_fields", :f => builder %>
+        <% end %>
+        <p>
+          <%= f.submit %>
+        </p>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 
   <div class=footer>
