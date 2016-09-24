@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root 'groups#index'
 
   resources :groups do
-    resources :members
+    resources :members do
+      resources :goals
+    end
   end
+    
   get '/members/new', to: 'members#new'
   # post '/members/create', to: 'members#create'
 
